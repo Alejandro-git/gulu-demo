@@ -48,16 +48,38 @@
 
 
 <body>
+    <style>
+        .demo {
+            border: 1px solid grey;
+            min-height: 50px;
+        }
+    </style>
+
+
     <!-- <style></style> -->
     <!-- vue 规则 不能在你的template和初始化App里面加上style，视为无效 -->
     <div id="app">
+        <g-layout style="height: 100vh;">
+            <g-header class="demo">header</g-header>
+            <g-layout>
+                <g-sider class="demo">sider</g-sider>
+                <g-content class="demo">content</g-content>
+            </g-layout>
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>
+
+        <br>
+        <hr><br>
+
         <div style="border: 1px solid black;">
             <g-row gutter="20">
                 <g-col span="23" offset="1" :narrow-pc="{span:12, offset:12}">1</g-col>
                 <g-col>2</g-col>
             </g-row>
-
         </div>
+
+        <br>
+        <hr>
 
         <div class="box">
             <g-input value="张三" :disabled="true" v-model="message"></g-input>
@@ -68,6 +90,8 @@
             <g-input value="赵六" error="姓名不能少于两个字"></g-input>
             <g-input value="钱七" @change="inputChange"></g-input>
         </div>
+
+        <hr>
 
         <div class="box">
             <g-button :loading="loading1" @click="loading1 = !loading1">
