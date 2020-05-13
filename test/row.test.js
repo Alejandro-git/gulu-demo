@@ -12,6 +12,7 @@ describe('Row', () => {
     expect(Row).to.exist
   })
   it('接收 gutter 属性.', (done) => {
+    // 如果测试里面存在异步，添加一个done，调用完成时再调用一下done（）
     Vue.component('g-row', Row)
     Vue.component('g-col', Col)
     const div = document.createElement('div')
