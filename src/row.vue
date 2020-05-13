@@ -10,6 +10,12 @@ export default {
     gutter: {
       type: [Number, String],
     },
+    align: {
+      type: String,
+      validator(value) {
+        return ["left", "right", "center"].indexOf(value) >= 0;
+      },
+    },
   },
   computed: {
     rowStyle() {
