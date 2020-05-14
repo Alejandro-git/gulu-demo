@@ -61,8 +61,8 @@ new Vue({
                         console.log('来了老弟');
                     }
                 },
-                autoClose: false,
-                autoCloseDelay: 3
+                autoClose: 3,
+                
             })
 
         }
