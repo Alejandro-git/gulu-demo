@@ -35,14 +35,17 @@ new Vue({
         loading3: false,
         message: 'hi'
     },
-    created(){
+    created() {
+        this.$toast('靓仔', {
+            enableHtml: false
+        })
+
     },
     methods: {
         inputChange(e) {
             console.log(e.target.value);
         },
-        showToast(){
-        this.$toast('我是 message')
+        showToast() {
 
         }
     }
