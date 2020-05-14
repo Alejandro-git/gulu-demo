@@ -36,25 +36,34 @@ new Vue({
         message: 'hi'
     },
     created() {
-        this.$toast('靓仔', {
-            position: 'middle',
-            enableHtml: false,
-            closeButton: {
-                text: '靓女',
-                callback() {
-                    console.log('来了老弟');
-                }
-            },
-            autoClose: false,
-            autoCloseDelay: 3
-        })
 
     },
     methods: {
         inputChange(e) {
             console.log(e.target.value);
         },
-        showToast() {
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToast(position) {
+            this.$toast(`${parseInt(Math.random() * 100, 10)}号靓仔`, {
+                position,
+                enableHtml: false,
+                closeButton: {
+                    text: '关闭',
+                    callback() {
+                        console.log('来了老弟');
+                    }
+                },
+                autoClose: false,
+                autoCloseDelay: 3
+            })
 
         }
     }
