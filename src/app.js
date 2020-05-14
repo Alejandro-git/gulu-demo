@@ -37,7 +37,16 @@ new Vue({
     },
     created() {
         this.$toast('靓仔', {
-            enableHtml: false
+            position: 'middle',
+            enableHtml: false,
+            closeButton: {
+                text: '靓女',
+                callback() {
+                    console.log('来了老弟');
+                }
+            },
+            autoClose: false,
+            autoCloseDelay: 3
         })
 
     },
