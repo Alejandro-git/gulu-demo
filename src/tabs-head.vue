@@ -1,6 +1,7 @@
 <template>
   <div class="tabs-head">
     <slot></slot>
+    <div class="line" ref="line"></div>
     <div class="actions-wrapper">
       <slot name="actions" ></slot>
     </div>
@@ -11,7 +12,14 @@
 export default {
   name: "LunziTabsHead",
   inject: ["eventBus"],
-  created() {},
+  created() {
+      this.eventBus.$on("update:selected", (item,vm)=>{
+        console.log(item);
+        console.log(vm.$el.getBoundingClientRect());
+        
+      });
+
+  },
 };
 </script>
 
@@ -24,6 +32,12 @@ $blue: blue;
   height: $tab-height;
   justify-content: flex-start;
   border-bottom: 1px solid red;
+  position: relative;
+  > .line{
+    position: absolute;
+    bottom: 0;
+    border-bottom:1px solid $blue;
+  }
   > .actions-wrapper {
     margin-left: auto;
   }
