@@ -45,7 +45,6 @@ export default {
 
 <style lang="scss" scoped>
 $blue: blue;
-
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
@@ -54,8 +53,8 @@ $blue: blue;
   display: flex;
   align-items: center;
   &.active {
-    background: $blue;
-    font-weight: blod;
+    color: $blue;
+    font-weight: bold;
   }
 }
 </style>
