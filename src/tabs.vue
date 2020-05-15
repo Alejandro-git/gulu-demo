@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 export default {
   name: "LunziTabs",
   props: {
@@ -20,8 +22,23 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      eventBus: new Vue(),
+    };
+  },
+  provide() {
+    // provide:eventBus 所有子组件都可以调用的属性
+    // 使用时 inject:[''eventBus]
+    return {
+      eventBus: this.eventBus,
+    };
+  },
   created() {
     //   this.$emit('update:selected', 'xxx')
+  },
+  mounted() {
+    this.eventBus.$emit("update:selected", this.selected);
   },
 };
 </script>
