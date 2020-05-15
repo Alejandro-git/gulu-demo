@@ -27,7 +27,7 @@ $tab-height: 40px;
 $blue: blue;
 $border-color: #ddd;
 .tabs-head {
-  display: flex;
+  display: flex; 
   height: $tab-height;
   justify-content: flex-start;
   position: relative;

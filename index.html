@@ -29,6 +29,7 @@
 
         #app {
             margin: 10px;
+            
         }
     </style>
     <style>
@@ -53,37 +54,56 @@
             border: 1px solid grey;
             min-height: 50px;
         }
-        .sider{
+
+        .sider {
             background: #666;
             width: 200px;
         }
-        .header{
+
+        .header {
             background: #999;
             height: 100px;
 
         }
-        .footer{
+
+        .footer {
             background: #999;
             height: 50px;
 
         }
-
     </style>
 
 
     <!-- <style></style> -->
     <!-- vue 规则 不能在你的template和初始化App里面加上style，视为无效 -->
     <div id="app">
-        <g-tabs :selected.sync="selectedTab" >
-        <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
+
+        <g-popover>
+            <template slot="content">
+                <div>123456点我点我点我</div>
+            </template>
+            <button>点我</button>
+        </g-popover>
+        <g-popover>
+            <template slot="content">
+                <div>456点我点我点我点我</div>
+            </template>
+            <button>点我</button>
+        </g-popover>
+
+        <br>
+        <hr><br>
+
+        <g-tabs :selected.sync="selectedTab">
+            <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
             <g-tabs-head>
                 <template slot="actions">
                     <button>设置</button>
                 </template>
                 <g-tabs-item name="woman" disabled>
-                   <g-icon name="settings"></g-icon>美女
+                    <g-icon name="settings"></g-icon>美女
                 </g-tabs-item>
-                <g-tabs-item name="finance" >
+                <g-tabs-item name="finance">
                     财经
                 </g-tabs-item>
                 <g-tabs-item name="sports">
@@ -110,7 +130,8 @@
         <button @click="showToast1">top</button>
         <button @click="showToast2">middle</button>
         <button @click="showToast3">bottom</button>
-        <br><hr><br>
+        <br>
+        <hr><br>
         <g-layout style="height: 100vh;">
             <g-sider>sider</g-sider>
             <g-layout>
