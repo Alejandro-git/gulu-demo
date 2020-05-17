@@ -49,12 +49,15 @@ new Vue({
         loading2: true,
         loading3: false,
         message: 'hi',
-        selectedTab:'sports'
+        selectedTab: 'sports'
     },
     created() {
 
     },
     methods: {
+        yyy() {
+            console.log('yyy')
+        },
         inputChange(e) {
             console.log(e.target.value);
         },
@@ -78,7 +81,7 @@ new Vue({
                     }
                 },
                 autoClose: 3,
-                
+
             })
 
         }

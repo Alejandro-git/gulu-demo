@@ -27,10 +27,7 @@
             font-size: var(--font-size);
         }
 
-        #app {
-            margin: 10px;
-            
-        }
+        #app {}
     </style>
     <style>
         .icon {
@@ -49,7 +46,7 @@
 
 
 <body>
-    <style>
+    <!-- <style>
         .demo {
             border: 1px solid grey;
             min-height: 50px;
@@ -71,32 +68,35 @@
             height: 50px;
 
         }
-    </style>
+    </style> -->
 
 
     <!-- <style></style> -->
     <!-- vue 规则 不能在你的template和初始化App里面加上style，视为无效 -->
-    <div id="app">
+    <div id="app" style="padding-top: 100px;
+     padding-left: 100px;border: 1px solid red; ">
 
-        <g-popover style="overflow:hidden;">
-            <template slot="content">
-                <div>123456点我点我点我</div>
-            </template>
-            <button>点我</button>
-        </g-popover>
-        <g-popover>
-            <template slot="content">
-                <div>456点我点我点我点我</div>
-            </template>
-            <button>点我</button>
-        </g-popover>
+        <div style=" overflow:hidden; border: 1px solid green;" padding="5px" @click="yyy">
+            <g-popover>
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </g-popover>
+            <g-popover>
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </g-popover>
+        </div>
 
-        <br>
-        <hr><br>
+        <!--<br>
+        <hr><br> -->
 
-        <g-tabs :selected.sync="selectedTab">
-            <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
-            <g-tabs-head>
+        <!-- <g-tabs :selected.sync="selectedTab"> -->
+        <!-- <g-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
+        <!-- <g-tabs-head>
                 <template slot="actions">
                     <button>设置</button>
                 </template>
@@ -187,7 +187,7 @@
                     下一页
                 </g-button>
             </g-button-group>
-        </div>
+        </div> -->
 
     </div>
     <script src="./src/app.js"></script>
