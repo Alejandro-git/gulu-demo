@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <div
       ref="contentWrapper"
       class="content-wrapper"
@@ -28,8 +28,46 @@ export default {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       },
     },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      },
+    },
   },
-  mounted() {},
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", this.onClick);
+    } else {
+      this.$refs.popover.addEventListener("mouseenter", this.open);
+      this.$refs.popover.addEventListener("mouseleave", this.close);
+    }
+  },
+  computed: {
+    openEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseenter";
+      }
+    },
+    closeEvent() {
+      if (this.trigger === "click") {
+        return "click";
+      } else {
+        return "mouseleave";
+      }
+    },
+  },
+  destroyed() {
+    if (this.trigger === "click") {
+      this.$refs.popover.removeEventListener("click", this.onClick);
+    } else {
+      this.$refs.popover.removeEventListener("mouseenter", this.open);
+      this.$refs.popover.removeEventListener("mouseleave", this.close);
+    }
+  },
   methods: {
     positionContent() {
       const { contentWrapper, triggerWrapper } = this.$refs;
@@ -135,10 +173,12 @@ $brder-radius: 4px;
     }
     &::before {
       border-top-color: black;
+      border-bottom: none;
       top: 100%;
     }
     &::after {
       border-top-color: white;
+      border-bottom: none;
       top: calc(100% - 1px);
     }
   }
@@ -150,10 +190,12 @@ $brder-radius: 4px;
     }
     &::before {
       border-bottom-color: black;
+      border-top: none;
       bottom: 100%;
     }
     &::after {
       border-bottom-color: white;
+      border-top: none;
       bottom: calc(100% - 1px);
     }
   }
@@ -167,10 +209,12 @@ $brder-radius: 4px;
     }
     &::before {
       border-left-color: black;
+      border-right: none;
       left: 100%;
     }
     &::after {
       border-left-color: white;
+      border-right: none;
       left: calc(100% - 1px);
     }
   }
@@ -183,10 +227,12 @@ $brder-radius: 4px;
     }
     &::before {
       border-right-color: black;
+      border-left: none;
       right: 100%;
     }
     &::after {
       border-right-color: white;
+      border-left: none;
       right: calc(100% - 1px);
     }
   }
