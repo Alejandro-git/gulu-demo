@@ -21,8 +21,7 @@ describe('Tabs', () => {
     expect(Tabs).to.exist
   })
 
-  it('接受 selected 属性', (done) => {
-
+  it('接受 selected 属性', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
@@ -45,7 +44,8 @@ describe('Tabs', () => {
     vm.$nextTick(() => {
       let x = vm.$el.querySelector(`.tabs-item[data-name="finance"]`)
       expect(x.classList.contains('active')).to.be.true
-      done()
+      // done()
+      // 未知暂时不用done
     })
   })
 

@@ -80,7 +80,7 @@ new Vue({
                         console.log('来了老弟');
                     }
                 },
-                autoClose: 3,
+                autoClose: 2,
 
             })
 
