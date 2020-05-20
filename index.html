@@ -54,6 +54,22 @@
             <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
         </g-collapse>
         {{selectedTab}}
+
+        <!-- <br>
+        <br>
+        <hr>
+        <br>
+
+        <div>
+            <g-row gutter="20">
+                <g-col span="12">1</g-col>
+                <g-col span="12">2</g-col>
+            </g-row>
+            gutter 是间隙的大小20px
+        </div>
+
+        <br>
+        <hr> -->
     </div>
     <!-- <style>
         .demo {
@@ -180,6 +196,8 @@
         <button @click="showToast3">bottom</button>
         <br>
         <hr><br>
+
+
         <g-layout style="height: 100vh;">
             <g-sider>sider</g-sider>
             <g-layout>
@@ -192,15 +210,7 @@
         <br>
         <hr><br>
 
-        <div style="border: 1px solid black;">
-            <g-row gutter="20">
-                <g-col span="23" offset="1" :narrow-pc="{span:12, offset:12}">1</g-col>
-                <g-col>2</g-col>
-            </g-row>
-        </div>
-
-        <br>
-        <hr>
+        
 
         <div class="box">
             <g-input value="张三" :disabled="true" v-model="message"></g-input>

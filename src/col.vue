@@ -1,6 +1,8 @@
 <template>
-  <div class="col" :class="colClass" :style="colStyle">
-    <slot></slot>
+  <div class="col" :style="colStyle">
+    <div :class="colClass">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
