@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="{'error': error}">
+  <div class="wrapper" :class="{ error }">
     <input
       v-bind:value="value"
       type="text"
@@ -10,18 +10,18 @@
       @focus="$emit('focus', $event.target.value)"
       @blur="$emit('blur', $event.target.value)"
     />
-     <template v-if="error">
+    <template v-if="error">
       <icon name="error" class="icon-error"></icon>
-      <span class="errorMessage">{{error}}</span>
+      <span class="errorMessage">{{ error }}</span>
     </template>
   </div>
 </template>
 
 <script>
-import Icon from './icon'
+import Icon from "./icon";
 
 export default {
-    components: {Icon},
+  components: { Icon },
 
   name: "LunziInput",
   props: {
