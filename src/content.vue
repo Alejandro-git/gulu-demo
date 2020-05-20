@@ -12,6 +12,8 @@
 
 <style lang="scss" scoped>
 .content{
+    display: flex;
     flex-grow: 1;
+    align-items: center;
 }
 </style>

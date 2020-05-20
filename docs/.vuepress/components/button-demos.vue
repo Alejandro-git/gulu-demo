@@ -20,11 +20,11 @@ export default {
     return {
       content: `
             <g-button>默认按钮</g-button>
-            <g-button icon="settings">默认按钮</g-button>
-            <g-button :loading="true">默认按钮</g-button>
-            <g-button disabled>默认按钮</g-button>
+<g-button icon="settings">默认按钮</g-button>
+<g-button :loading="true">默认按钮</g-button>
+<g-button disabled>默认按钮</g-button>
             `
-        .replace(/\t+| +/g, "")
+        // .replace(/\t+| +/g, "")
         .trim(),
       // 替换（所有的tab和空格）.去掉两头的空格
       // .replace(/^\s+/g,'')：“替换（所有的空格）”

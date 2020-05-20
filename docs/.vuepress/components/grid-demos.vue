@@ -27,16 +27,16 @@ export default {
     return {
       content: `
             <g-row>
-            <g-col span="12-1">1</g-col>
-            <g-col span="12-2">2</g-col>
-            </g-row>
-            <br>
-            <g-row gutter="10">
-            <g-col span="12-1">1</g-col>
-            <g-col span="12-2">2</g-col>
-            </g-row>
+  <g-col span="12-1">1</g-col>
+  <g-col span="12-2">2</g-col>
+</g-row>
+<br>
+<g-row gutter="10">
+  <g-col span="12-1">1</g-col>
+  <g-col span="12-2">2</g-col>
+</g-row>
             `
-        .replace(/\t+| +/g, "")
+        // .replace(/\t+| +/g, "")
         .trim(),
       // 替换（所有的tab和空格）.去掉两头的空格
       // .replace(/^\s+/g,'')：“替换（所有的空格）”

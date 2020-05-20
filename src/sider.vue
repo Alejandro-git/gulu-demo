@@ -22,6 +22,10 @@ export default {
 <style lang="scss" scoped>
 .sider {
   position: relative;
+  border: 1px solid grey;
+  background: #666;
+  width: 200px;
+
   > button {
     position: absolute;
     top: 0;

@@ -21,11 +21,11 @@ export default {
     return {
       content: `
             <g-input value="张三" :disabled="true"></g-input>
-            <g-input value="李四" readonly></g-input>
-            <g-input value="王五"></g-input>
-            <g-input value="赵六" error="姓名不能少于两个字"></g-input>
+<g-input value="李四" readonly></g-input>
+<g-input value="王五"></g-input>
+<g-input value="赵六" error="姓名不能少于两个字"></g-input>
             `
-        .replace(/\t+| +/g, "")
+        // .replace(/\t+| +/g, "")
         .trim(),
     };
   },
